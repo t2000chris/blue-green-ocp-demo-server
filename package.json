@@ -1,0 +1,15 @@
+{
+  "name": "blue-green",
+  "version": "1.0.0",
+  "description": "Blue green deployment demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christopher Lam",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
