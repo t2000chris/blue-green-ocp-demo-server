@@ -8,4 +8,4 @@ app.get('/', (req, res) => res.send('Do not browse root!!'));
 require('./routes/versionRoutes')(app, config);
 require('./routes/cpuLoadRoutes')(app, config);
 
-app.listen(3000, () => console.log('Server up!'));
+app.listen(8080, () => console.log('Server up!'));
