@@ -1,22 +1,22 @@
 pipeline {
     agent any
-        stage{
+        stages {
             stage('Build'){
-                steps {
-                    echo 'This is build stage'
-                }
+            steps {
+                echo 'This is build stage'
+            }
             }
 
             stage('Approval'){
-                steps {
-                    input('Approve deployment to dev?')
-                }
+            steps {
+                input('Approve deployment to dev?')
+            }
             }
 
             stage('Dev') {
-                steps {
-                    echo 'Deploy to dev enviornment'
-                }
+            steps {
+                echo 'Deploy to dev enviornment'
+            }
             }
         }
 }
