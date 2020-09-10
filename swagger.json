@@ -1,0 +1,85 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is a sample blue green deployment demo server with pod horizontal scaling.",
+      "version": "0.1",
+      "title": "Blue Green Demo",
+      "contact": {
+        "email": "christopher.lam@redhat.com"
+      },
+      "license": {
+        "name": "GPL v3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+      }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "version",
+        "description": "Get the current software version"
+      },
+      {
+        "name": "cpu",
+        "description": "Generate CPU usage from server"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/api/version": {
+        "get": {
+          "tags": [
+            "version"
+          ],
+          "summary": "Returns current server version",
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ver": {
+                    "type": "integer",
+                    "description": "Server version."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/cpu": {
+        "get": {
+          "tags": [
+            "cpu"
+          ],
+          "summary": "Generate CPU usage by calculating Fibonacci number",
+          "parameters": [
+            {
+              "name": "load",
+              "in": "query",
+              "type": "integer",
+              "description": "Load starts from 45 should getting heavy"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "resp": {
+                    "type": "string",
+                    "description": "Complete calculateion with loading.",
+                    "example": "Finish calculating Fibonacci! With loading 30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
